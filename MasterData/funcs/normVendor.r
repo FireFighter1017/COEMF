@@ -25,3 +25,21 @@ normVendor <- function(vendor){
   
   return(vendor)
 }
+
+normParts <- function(PART){
+# Normalizes part number format for comparison
+#
+# Args:
+#   PART: vector of character values reprensenting 
+#           part numbers
+# Return:
+#   PART: Normalized part numbers with no space
+
+    # Uppercase
+  PART <- toupper(PART)
+    # Remove any spaces
+  PART <- gsub("[:space:]", "", PART)
+    # Remove carriage returns
+  PART <- gsub("\\n", "", PART)
+  return(PART)
+}
