@@ -37,8 +37,6 @@ normVendor <- function(vendor){
   vendor[grep("^ADAPTA BEACON", vendor)] <- "EDWARDS"
   
   return(vendor)
-  
-  return(vendor)
 }
 
 normParts <- function(PART){
