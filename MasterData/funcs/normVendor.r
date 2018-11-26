@@ -22,21 +22,21 @@ normVendor <- function(vendor){
   # Corrections helping recognition
   # Thomas & Betts is often spelled T&B (TB when normalized)
     # Remove invalid entries
-  VENDOR[VENDOR==0] = NA
-  VENDOR[VENDOR=="TB"] <- "THOMAS & BETTS"
-  VENDOR[VENDOR=="SKF CANADA"] <- "SKF"
-  VENDOR[grep("^REGAL BELOIT", VENDOR)] <- "REGAL BELOIT"
-  VENDOR[grep("^ABB MOTOR", VENDOR)] <- "ABB"
-  VENDOR[VENDOR=="NTN BEARING CORP OF CANADA LTD"] <- "NTN"
-  VENDOR[grep("MARTIN SPROCKET", VENDOR)] <- "MARTIN SPROCKET & GEAR"
-  VENDOR[grep("^REXNORD", VENDOR)] <- "REXNORD"
-  VENDOR[VENDOR=="CHEMLINE PLASTICS LIMITED"] <- "CHEMLINE"
-  VENDOR[VENDOR=="JDB BEARINGS OF CANADA LTD"] <- "JDB BEARINGS"
-  VENDOR[grep("^OSISENSE", VENDOR)] <- "TELEMECANIQUE"
-  VENDOR[grep("^YUEQING BETHEL", VENDOR)] <- "YUEQING BETHEL"
-  VENDOR[grep("^ADAPTA BEACON", VENDOR)] <- "EDWARDS"
+  vendor[vendor==0] = NA
+  vendor[vendor=="TB"] <- "THOMAS & BETTS"
+  vendor[vendor=="SKF CANADA"] <- "SKF"
+  vendor[grep("^REGAL BELOIT", vendor)] <- "REGAL BELOIT"
+  vendor[grep("^ABB MOTOR", vendor)] <- "ABB"
+  vendor[vendor=="NTN BEARING CORP OF CANADA LTD"] <- "NTN"
+  vendor[grep("MARTIN SPROCKET", vendor)] <- "MARTIN SPROCKET & GEAR"
+  vendor[grep("^REXNORD", vendor)] <- "REXNORD"
+  vendor[vendor=="CHEMLINE PLASTICS LIMITED"] <- "CHEMLINE"
+  vendor[vendor=="JDB BEARINGS OF CANADA LTD"] <- "JDB BEARINGS"
+  vendor[grep("^OSISENSE", vendor)] <- "TELEMECANIQUE"
+  vendor[grep("^YUEQING BETHEL", vendor)] <- "YUEQING BETHEL"
+  vendor[grep("^ADAPTA BEACON", vendor)] <- "EDWARDS"
   
-  return(VENDOR)
+  return(vendor)
   
   return(vendor)
 }
