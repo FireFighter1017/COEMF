@@ -35,6 +35,7 @@ normVendor <- function(vendor){
   vendor[grep("^OSISENSE", vendor)] <- "TELEMECANIQUE"
   vendor[grep("^YUEQING BETHEL", vendor)] <- "YUEQING BETHEL"
   vendor[grep("^ADAPTA BEACON", vendor)] <- "EDWARDS"
+  vendor[grep("^E80", vendor)] <- "ELETTRIC80"
   
   return(vendor)
 }
