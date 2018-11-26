@@ -21,7 +21,22 @@ normVendor <- function(vendor){
   
   # Corrections helping recognition
   # Thomas & Betts is often spelled T&B (TB when normalized)
-  vendor[vendor=="TB"] <- "THOMAS & BETTS"
+    # Remove invalid entries
+  VENDOR[VENDOR==0] = NA
+  VENDOR[VENDOR=="TB"] <- "THOMAS & BETTS"
+  VENDOR[VENDOR=="SKF CANADA"] <- "SKF"
+  VENDOR[grep("^REGAL BELOIT", VENDOR)] <- "REGAL BELOIT"
+  VENDOR[grep("^ABB MOTOR", VENDOR)] <- "ABB"
+  VENDOR[VENDOR=="NTN BEARING CORP OF CANADA LTD"] <- "NTN"
+  VENDOR[grep("MARTIN SPROCKET", VENDOR)] <- "MARTIN SPROCKET & GEAR"
+  VENDOR[grep("^REXNORD", VENDOR)] <- "REXNORD"
+  VENDOR[VENDOR=="CHEMLINE PLASTICS LIMITED"] <- "CHEMLINE"
+  VENDOR[VENDOR=="JDB BEARINGS OF CANADA LTD"] <- "JDB BEARINGS"
+  VENDOR[grep("^OSISENSE", VENDOR)] <- "TELEMECANIQUE"
+  VENDOR[grep("^YUEQING BETHEL", VENDOR)] <- "YUEQING BETHEL"
+  VENDOR[grep("^ADAPTA BEACON", VENDOR)] <- "EDWARDS"
+  
+  return(VENDOR)
   
   return(vendor)
 }
@@ -41,5 +56,7 @@ normParts <- function(PART){
   PART <- gsub("[:space:]", "", PART)
     # Remove carriage returns
   PART <- gsub("\\n", "", PART)
+  PART[PART==0] = NA
+  
   return(PART)
 }
